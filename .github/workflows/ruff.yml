@@ -16,6 +16,10 @@ jobs:
       - name: Install the latest version of uv
         uses: astral-sh/setup-uv@4959332f0f014c5280e7eac8b70c90cb574c9f9b # v6
 
-      - name: Run ruff
+      - name: Run Ruff
         run: |
-          uvx ruff .
+          uvx ruff check .
+
+      - name: Run Ruff format check
+        run: |
+          uvx ruff format --check .
