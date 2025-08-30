@@ -1,0 +1,5 @@
+{
+    "name": "Python 3 Kaggle",
+    "image": "mcr.microsoft.com/devcontainers/python:3.13",
+    "postCreateCommand": "wget -qO- https://astral.sh/uv/install.sh | sh"
+}

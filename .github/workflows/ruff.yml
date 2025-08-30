@@ -1,0 +1,30 @@
+name: Ruff
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+
+      - name: Install the latest version of uv
+        uses: astral-sh/setup-uv@4959332f0f014c5280e7eac8b70c90cb574c9f9b # v6
+
+      - name: Run Ruff
+        run: |
+          uvx ruff check .
+
+      - name: Run Ruff format check
+        run: |
+          uvx ruff format --check .
