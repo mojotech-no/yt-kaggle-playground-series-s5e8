@@ -134,9 +134,9 @@ def preprocess_data(train_df, test_df):
     # Feature engineering
     print("Engineering features...")
     
-    # Age groups
-    X_train['age_group'] = pd.cut(X_train['age'], bins=[0, 25, 35, 50, 100], labels=[0, 1, 2, 3])
-    X_test['age_group'] = pd.cut(X_test['age'], bins=[0, 25, 35, 50, 100], labels=[0, 1, 2, 3])
+    # Age groups (convert to int to avoid categorical issues with XGBoost)
+    X_train['age_group'] = pd.cut(X_train['age'], bins=[0, 25, 35, 50, 100], labels=[0, 1, 2, 3]).astype(int)
+    X_test['age_group'] = pd.cut(X_test['age'], bins=[0, 25, 35, 50, 100], labels=[0, 1, 2, 3]).astype(int)
     
     # Balance categories
     X_train['balance_positive'] = (X_train['balance'] > 0).astype(int)
