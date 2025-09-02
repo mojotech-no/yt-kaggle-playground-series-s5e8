@@ -22,3 +22,5 @@ Ruff is used for linting and formatting. See .github/workflows/ruff.yml for work
 Latest version of any dependencies is desired. Version pinned, do not pin using keyword latest.
 
 Code should be simple rather than complex. Creating tests is expected, but not mandatory.
+
+I don't have a GPU, only a weak cpu. Keep it light.
