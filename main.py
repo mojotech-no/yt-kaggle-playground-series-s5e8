@@ -12,23 +12,23 @@ This script implements a comprehensive machine learning pipeline including:
 - Submission generation
 """
 
-import warnings
-
-warnings.filterwarnings("ignore")
-
-import pandas as pd
-import numpy as np
 from sklearn.model_selection import train_test_split, StratifiedKFold
 from sklearn.preprocessing import LabelEncoder
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import roc_auc_score
+from optuna.samplers import TPESampler
+from pathlib import Path
+import pandas as pd
+import numpy as np
 import xgboost as xgb
 import lightgbm as lgb
 import catboost as cat
 import optuna
-from optuna.samplers import TPESampler
+
 import logging
-from pathlib import Path
+import warnings
+
+warnings.filterwarnings("ignore")
 
 
 # Configure logging
