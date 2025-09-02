@@ -17,20 +17,16 @@ warnings.filterwarnings('ignore')
 
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
-from sklearn.model_selection import train_test_split, StratifiedKFold, cross_val_score
-from sklearn.preprocessing import LabelEncoder, StandardScaler, RobustScaler
+from sklearn.model_selection import train_test_split, StratifiedKFold
+from sklearn.preprocessing import LabelEncoder
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import roc_auc_score, classification_report, confusion_matrix
-from sklearn.feature_selection import SelectKBest, f_classif
+from sklearn.metrics import roc_auc_score
 import xgboost as xgb
 import lightgbm as lgb
 import catboost as cat
 import optuna
 from optuna.samplers import TPESampler
 import logging
-import os
 from pathlib import Path
 
 
@@ -441,7 +437,7 @@ class BankMarketingPredictor:
         
         logger.info(f"Submission saved to {submission_path}")
         logger.info(f"Submission shape: {submission.shape}")
-        logger.info(f"Prediction statistics:")
+        logger.info("Prediction statistics:")
         logger.info(f"  Mean: {predictions.mean():.4f}")
         logger.info(f"  Std: {predictions.std():.4f}")
         logger.info(f"  Min: {predictions.min():.4f}")
