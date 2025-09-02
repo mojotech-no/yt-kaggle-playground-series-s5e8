@@ -28,9 +28,6 @@ import optuna
 import logging
 import warnings
 
-warnings.filterwarnings("ignore")
-
-
 # Configure logging
 logging.basicConfig(
     level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
