@@ -1,12 +1,22 @@
 [project]
 name = "yt-kaggle-playground-series-s5e8"
 version = "0.1.0"
-description = "Add your description here"
+description = "Binary Classification with a Bank Dataset - Kaggle Playground Series S5E8"
 readme = "README.md"
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "pandas==2.3.2",
+    "numpy==2.3.2",
+    "scikit-learn==1.7.1",
+    "xgboost==3.0.4",
+    "lightgbm==4.6.0",
+    "catboost==1.2.8",
+    "matplotlib==3.10.6",
+    "seaborn==0.13.2",
+    "optuna==4.5.0",
+]
 
 [dependency-groups]
 dev = [
-    "ruff>=0.12.11",
+    "ruff==0.12.11",
 ]
