@@ -34,11 +34,13 @@ categorical_cols = [
     "month",
     "poutcome",
 ]
-le = LabelEncoder()
+encoders = {}
 for col in categorical_cols:
     if col in train_df.columns:
+        le = LabelEncoder()
         train_df[col] = le.fit_transform(train_df[col].astype(str))
         test_df[col] = le.transform(test_df[col].astype(str))
+        encoders[col] = le
 
 # Fill missing values if any (though probably none)
 train_df = train_df.fillna(0)
